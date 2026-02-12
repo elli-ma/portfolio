@@ -8,7 +8,7 @@
   },
   "aboutme": {
     "title": "I am ELLI",
-    "text": "Frontend Developer with experience in web product development, fashion design and manufacturing, with a touch of work in backend development and devops. React dev.",
+    "text": "Frontend developer specializing in Next.js and Tailwind CSS. I build commercial web products focused on performance and modern UI. Experienced with Three.js, animations, and mobile development.",
     "list": {
       "item1":"Phone:",
       "item2":"Email:",
@@ -19,8 +19,10 @@
   },
   "skills": {
     "title": "Skills",
-    "item1": "Frontend development",
-    "item2": "Design"
+    "item1": "Frontend Development",
+    "item2": "Design",
+    "item3": "Advanced Technologies",
+    "backend": "Backend Development"
   },
   "education": {
     "title": "Education",
@@ -30,6 +32,17 @@
   "portfolio": {
     "title": "Portfolio"
   },
+  "projects": {
+    "videocubes": "Commercial website for LED video cubes designed for sports arenas. Responsive landing page with custom Tailwind configuration and product showcase.",
+    "dicolor": "Corporate website for an LED screen manufacturer. Server-rendered with Next.js App Router, product catalog for indoor and outdoor displays.",
+    "katafot": "Corporate website for an LED displays and road equipment company. Built with Next.js, responsive design with custom fonts and optimized images.",
+    "lampro": "Full business website for a professional LED equipment manufacturer. Hero carousel, lead capture forms, project portfolio with 1400+ completed projects.",
+    "cone": "Interactive 3D parametric cone generator. Geometry computed server-side via Next.js API Routes, rendered as wireframe with raw BufferGeometry — no built-in Three.js primitives.",
+    "scroll": "Apple-style scroll-driven frame-by-frame animation. 24 PNG frames play on canvas via GSAP ScrollTrigger as the user scrolls. Pinned viewport, snap-to-frame.",
+    "recipes": "Full-featured recipe application with modern UI. Browse, search, and filter recipes using shadcn/ui components and Lucide icons.",
+    "lichi": "Virtualized product catalog connected to the real Lichi fashion API. Only visible cards are in the DOM via react-window, infinite scroll auto-fetches new pages, SWR caching.",
+    "aibag": "E-commerce prototype with 36 AI-generated bag images. Zero dependencies — pure vanilla JS. Dark/light theme, order modal, responsive grid, BEM methodology."
+  },
   "contact": {
     "title": "Contact me",
     "name": "Name",
@@ -38,6 +51,6 @@
     "button": "Send message"
   },
   "footer": {
-    "text": "made with "
+    "text": "ELLI — Frontend Developer"
   }
 }

@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-sm leading-relaxed tracking-wide text-brand-blue;
+  }
+  .dark .border-separator {
+    border-color: rgba(237, 232, 208, 0.15);
+  }
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply px-[8%] py-10 flex justify-between gap-[3%] border-b-2 border-separator
+           xl:py-14 xl:px-[12%]
+           2xl:px-[20%]
+           3xl:px-[28%];
+  }
+  .section-title {
+    @apply font-heading text-3xl leading-none tracking-wider uppercase xl:text-4xl;
+  }
+}

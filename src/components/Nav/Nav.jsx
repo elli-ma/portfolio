@@ -1,44 +1,79 @@
-import './Nav.scss'
-import Sun from '../../assets/images/sun.svg';
-import Moon from '../../assets/images/moon.svg';
-import Word from '../../assets/images//word.svg'
-
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function Nav(props) {
+function Nav({ toggleTheme, changeLanguage, isDark, language }) {
   const { t } = useTranslation();
-  const moon = props.view === '#fff6e5' ? Moon : Sun;
-  const language = props.language;
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="nav">
-      <ul className="nav__lists">
-        <ul className='nav__one'>
-          <li className="nav__item">
-            <a className="nav__link" aria-current="page" href="#about-me">{t("nav.item1")}</a>
-          </li>
-          <li className="nav__item">
-            <a className="nav__link" aria-current="page" href="#skills">{t("nav.item2")}</a>
-          </li>
-          <li className="nav__item">
-            <a className="nav__link" aria-current="page" href="#education">{t("nav.item3")}</a>
-          </li>
-          <li className="nav__item">
-            <a className="nav__link" aria-current="page" href="#portfolio">{t("nav.item4")}</a>
-          </li>
-          <li className="nav__item">
-            <a className="nav__link" aria-current="page" href="#contact">{t("nav.item5")}</a>
-          </li>
+    <nav className="fixed top-0 left-0 w-full bg-brand-blue z-50
+                     px-[8%] py-3
+                     xl:px-[12%]
+                     2xl:px-[20%] 2xl:py-5
+                     3xl:px-[28%]">
+      <div className="flex items-center justify-between">
+        {/* Hamburger — mobile only */}
+        <button
+          className="xl:hidden text-brand-cream p-1"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <i className={`fa-solid ${menuOpen ? 'fa-xmark' : 'fa-bars'} text-xl`}></i>
+        </button>
+
+        {/* Desktop nav links */}
+        <ul className="hidden xl:flex items-center gap-6">
+          {['about-me', 'skills', 'education', 'portfolio'].map((id, i) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                className="text-xs uppercase font-heading tracking-widest text-brand-cream/70
+                           hover:text-brand-cream transition-colors duration-200
+                           relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-cream
+                           hover:after:w-full after:transition-all after:duration-300"
+              >
+                {t(`nav.item${i + 1}`)}
+              </a>
+            </li>
+          ))}
         </ul>
-        <ul className='nav__two'>
-          <li className="nav__buttons">
-            <button className="nav__button" onClick={() => props.changeLanguage(language)} type="button"><img src={Word} /></button>
-            <button className="nav__button word" onClick={props.handleView} type="button"> <img src={moon} /> </button>
+
+        {/* Theme + Language buttons */}
+        <div className="flex items-center gap-3">
+          <button
+            className="w-8 h-8 rounded-full border-2 border-brand-cream/40 flex items-center justify-center text-xs text-brand-cream
+                       hover:bg-brand-cream hover:text-brand-blue transition-all duration-200"
+            onClick={() => changeLanguage(language)}
+          >
+            <span className="font-bold text-[10px] leading-none">{language === 'en' ? 'RU' : 'EN'}</span>
+          </button>
+          <button
+            className="w-8 h-8 rounded-full border-2 border-brand-cream/40 flex items-center justify-center text-xs text-brand-cream
+                       hover:bg-brand-cream hover:text-brand-blue transition-all duration-200"
+            onClick={toggleTheme}
+          >
+            <i className={`fa-solid ${isDark ? 'fa-sun' : 'fa-moon'}`}></i>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu dropdown */}
+      <ul className={`xl:hidden flex flex-col gap-3 pt-4 overflow-hidden transition-all duration-300
+                      ${menuOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+        {['about-me', 'skills', 'education', 'portfolio'].map((id, i) => (
+          <li key={id}>
+            <a
+              href={`#${id}`}
+              className="text-sm uppercase font-heading tracking-widest text-brand-cream/70
+                         hover:text-brand-cream transition-colors duration-200"
+              onClick={() => setMenuOpen(false)}
+            >
+              {t(`nav.item${i + 1}`)}
+            </a>
           </li>
-        </ul>
+        ))}
       </ul>
     </nav>
   );
 }
 export default Nav;
-

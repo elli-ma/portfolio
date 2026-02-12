@@ -1,251 +1,91 @@
-import "./Projects.scss";
-import Lichi from "../../assets/images/LICHI.jpg";
-import Color from "../../assets/images/Color.jpg";
-import Shop from "../../assets/images/Bag.jpg";
-import Yandex from "../../assets/images/Yandex.jpg";
-import TicTac from "../../assets/images/TicTac.jpg";
-import Comment from "../../assets/images/Comment.jpg";
-import Beauty from "../../assets/images/Beauty.jpg";
-import Conquest from "../../assets/images/Conquest.jpg";
-import Sultan from "../../assets/images/Sultan.jpg";
-import Dicolor from "../../assets/images/Dicolor.jpg";
-import AM from "../../assets/images/AM Pro.jpg";
-import Katafot from "../../assets/images/Katafot.jpg";
-import Cube from "../../assets/images/Cube.jpg";
-
 import { useTranslation } from "react-i18next";
 
 function Projects() {
   const { t } = useTranslation();
+
+  const projects = [
+    {
+      name: 'Videocubes',
+      url: 'https://videocubes.ru/',
+      tech: 'Tailwind, Flowbite',
+      descKey: 'projects.videocubes',
+    },
+    {
+      name: 'Dicolorled Russia',
+      url: 'https://dicolorled.ru/',
+      tech: 'Next.js, Tailwind, Flowbite',
+      descKey: 'projects.dicolor',
+    },
+    {
+      name: 'Katafot',
+      url: 'https://www.katafot.su/',
+      tech: 'Next.js, Tailwind',
+      descKey: 'projects.katafot',
+    },
+    {
+      name: 'GTL AM PRO',
+      url: 'https://lampro.moscow/',
+      tech: 'Bootstrap 5, jQuery, Slick.js',
+      descKey: 'projects.lampro',
+    },
+    {
+      name: '3D Cone Generator',
+      url: 'https://github.com/elli-ma/cone',
+      tech: 'Next.js, React Three Fiber, Three.js, TypeScript',
+      descKey: 'projects.cone',
+    },
+    {
+      name: 'Scroll Animation',
+      url: 'https://github.com/elli-ma/scroll',
+      tech: 'Next.js, GSAP, ScrollTrigger, Canvas, TypeScript',
+      descKey: 'projects.scroll',
+    },
+    {
+      name: 'Recipes',
+      url: 'https://github.com/elli-ma/recipes',
+      tech: 'Next.js, TypeScript, Tailwind, shadcn/ui',
+      descKey: 'projects.recipes',
+    },
+    {
+      name: 'Lichi Catalog',
+      url: 'https://github.com/elli-ma/lichi-catalog',
+      tech: 'Next.js, SWR Infinite, react-window, TypeScript',
+      descKey: 'projects.lichi',
+    },
+    {
+      name: 'AI Bag Shop',
+      url: 'https://github.com/elli-ma/ai-bag-shop',
+      tech: 'Vanilla JS, SCSS, BEM',
+      descKey: 'projects.aibag',
+    },
+  ];
+
   return (
-    <section className="block block__row">
-      <h2 className="block__title">{t("portfolio.title")}</h2>
-      <div className="items">
-        <div className="item">
-          <div className="img__box">
-            <a href="https://videocubes.ru/" target="_blank">
-              <img className="item__img" src={Cube} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://videocubes.ru//"
-              target="_blank"
-            >
-              Videocubes
-            </a>
-          </h4>
-          <p className="item__text">Tailwind.</p>
-        </div>
-
-        <div className="item">
-          <div className="img__box">
-            <a href="https://dicolorled.ru/" target="_blank">
-              <img className="item__img" src={Dicolor} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://dicolorled.ru/"
-              target="_blank"
-            >
-              Dicolorled russia
-            </a>
-          </h4>
-          <p className="item__text">Next, Flowbite, Tailwind.</p>
-        </div>
-
-        <div className="item">
-          <div className="img__box">
-            <a href="https://www.katafot.su/" target="_blank">
-              <img className="item__img" src={Katafot} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://www.katafot.su/"
-              target="_blank"
-            >
-              Katafot
-            </a>
-          </h4>
-          <p className="item__text">SCSS-layout.</p>
-        </div>
-
-        <div className="item">
-          <div className="img__box">
-            <a href="https://lampro.moscow/" target="_blank">
-              <img className="item__img" src={AM} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://lampro.moscow/"
-              target="_blank"
-            >
-              GTL AM PRO
-            </a>
-          </h4>
-          <p className="item__text">SCSS-layout.</p>
-        </div>
-
-        <div className="item">
-          <div className="img__box">
-            <a href="https://elli-ma.github.io/sultan/" target="_blank">
-              <img className="item__img" src={Sultan} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://elli-ma.github.io/sultan/"
-              target="_blank"
-            >
-              Sultan
-            </a>
-          </h4>
-          <p className="item__text">React,Typescript.</p>
-        </div>
-        <div className="item">
-          <div className="img__box">
-            <a href="https://elli-ma.github.io/Beuty/" target="_blank">
-              <img className="item__img" src={Beauty} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://elli-ma.github.io/Beuty/"
-              target="_blank"
-            >
-              Beaty
-            </a>
-          </h4>
-          <p className="item__text">BEM-layout.</p>
-        </div>
-        <div className="item">
-          <div className="img__box">
-            <a href="https://elli-ma.github.io/Conquest/" target="_blank">
-              <img className="item__img" src={Conquest} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://elli-ma.github.io/Conquest/"
-              target="_blank"
-            >
-              Conquest
-            </a>
-          </h4>
-          <p className="item__text">BEM-layout.</p>
-        </div>
-        <div className="item">
-          <div className="img__box">
-            <a href="https://elli-ma.github.io/comments/" target="_blank">
-              <img className="item__img" src={Comment} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://elli-ma.github.io/comments/"
-              target="_blank"
-            >
-              Comment
-            </a>
-          </h4>
-          <p className="item__text">JavaScript,Bootstrap.</p>
-        </div>
-        <div className="item">
-          <div className="img__box">
-            <a href="https://elli-ma.github.io/krestiki/" target="_blank">
-              <img className="item__img" src={TicTac} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://elli-ma.github.io/krestiki/"
-              target="_blank"
-            >
-              TicTac
-            </a>
-          </h4>
-          <p className="item__text">JavaScript.</p>
-        </div>
-        <div className="item">
-          <div className="img__box">
-            <a href="https://elli-ma.github.io/Yandex/" target="_blank">
-              <img className="item__img" src={Yandex} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://elli-ma.github.io/Yandex/"
-              target="_blank"
-            >
-              Yandex
-            </a>
-          </h4>
-          <p className="item__text">Tailwind CSS-layout.</p>
-        </div>
-        <div className="item">
-          <div className="img__box">
-            <a href="https://elli-ma.github.io/Color_matching/" target="_blank">
-              <img className="item__img" src={Color} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://elli-ma.github.io/Color_matching/"
-              target="_blank"
-            >
-              Color
-            </a>
-          </h4>
-          <p className="item__text">JavaScript.</p>
-        </div>
-        <div className="item">
-          <div className="img__box">
-            <a href="https://elli-ma.github.io/SHOP/" target="_blank">
-              <img className="item__img" src={Shop} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://elli-ma.github.io/SHOP/"
-              target="_blank"
-            >
-              Shop
-            </a>
-          </h4>
-          <p className="item__text">HTML, SCSS, JavaScript.</p>
-        </div>
-        <div className="item">
-          <div className="img__box">
-            <a href="https://github.com/elli-ma/LICHI" target="_blank">
-              <img className="item__img" src={Lichi} alt="" />
-            </a>
-          </div>
-          <h4 className="item__title">
-            <a
-              className="item__title"
-              href="https://github.com/elli-ma/LICHI"
-              target="_blank"
-            >
-              Lichi
-            </a>
-          </h4>
-          <p className="item__text">Next, Typescript.</p>
-        </div>
+    <section id="portfolio" className="px-[8%] py-10 xl:py-14 xl:px-[12%] 2xl:px-[20%] 3xl:px-[28%] border-b-2 border-separator">
+      <h2 className="section-title mb-8">{t("portfolio.title")}</h2>
+      <div className="grid grid-cols-1 xs:grid-cols-2 xl:grid-cols-3 gap-5">
+        {projects.map(({ name, url, tech, descKey }) => (
+          <a
+            key={name}
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="group block p-5 border-2 border-brand-blue/20 dark:border-brand-cream/20
+                       bg-brand-cream dark:bg-brand-navy-light
+                       hover:border-brand-blue dark:hover:border-brand-cream hover:-translate-y-1
+                       shadow-card hover:shadow-card-hover
+                       transition-all duration-300 ease-out"
+          >
+            <h4 className="font-heading text-xl tracking-wider flex items-center justify-between
+                          group-hover:text-brand-blue-light dark:group-hover:text-brand-cream
+                          transition-colors duration-200">
+              {name}
+              <i className="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-0 group-hover:opacity-50 transition-opacity duration-200"></i>
+            </h4>
+            <p className="mt-2 text-sm opacity-70 leading-relaxed">{t(descKey)}</p>
+            <p className="mt-3 text-xs opacity-40 font-bold">{tech}</p>
+          </a>
+        ))}
       </div>
     </section>
   );
