@@ -2,7 +2,7 @@
 
 Personal portfolio website built with React and Tailwind CSS.
 
-**Live:** [elli-ma.github.io/PORTFOLIO](https://elli-ma.github.io/PORTFOLIO/)
+**Live:** [elli-ma.github.io/portfolio](https://elli-ma.github.io/portfolio/)
 
 ## Tech Stack
 
